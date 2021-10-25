@@ -24,7 +24,7 @@
     <input type="text" [formControl]="city" required />
   </div>
   <button type="reset">Reset</button>
-  <button type="button" (click)="newUser()" >Inscription</button>
+  <button type="button" (click)="newUser()">Inscription</button>
 </form>
 <div *ngFor="let user of users">
   <p>{{ user.username.value }}</p>
