@@ -8,27 +8,29 @@ import { User } from 'src/shared/user.model';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  username = new FormControl('test username');
-  email = new FormControl('test email');
-  password = new FormControl('test password');
-  street = new FormControl('test street');
-  zipCode = new FormControl('test zip code');
-  city = new FormControl('test city');
-  user: User = new User(
-    this.username,
-    this.email,
-    this.password,
-    this.street,
-    this.zipCode,
-    this.city
-  );
+  users = new Array();
 
-  isSubmitted: boolean = false;
-
-  turnToSubmitted() {
-    this.isSubmitted = true;
-  }
+  username = new FormControl('');
+  email = new FormControl('');
+  password = new FormControl('');
+  street = new FormControl('');
+  zipCode = new FormControl('');
+  city = new FormControl('');
+  
   constructor() {}
+
+  newUser() {
+    this.users.push(
+      new User(
+        this.username,
+        this.email,
+        this.password,
+        this.street,
+        this.zipCode,
+        this.city
+      )
+    );
+  }
 
   ngOnInit(): void {}
 }

@@ -9,14 +9,14 @@ export class User {
   city: FormControl;
 
   constructor(
-    username: FormControl,
+    toto: FormControl,
     email: FormControl,
     password: FormControl,
     street: FormControl,
     zipCode: FormControl,
     city: FormControl
   ) {
-    this.username = username;
+    this.username = toto;
     this.email = email;
     this.password = password;
     this.street = street;

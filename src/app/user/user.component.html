@@ -2,32 +2,32 @@
     <form>
     <div>
       <label>Username:</label>
-      <input type="text" [formControl]="user.username" required />
+      <input type="text" [formControl]="username" required />
     </div>
     <div>
       <label>Email:</label>
-      <input type="email" [formControl]="user.email" required email />
+      <input type="email" [formControl]="email" required email />
     </div>
     <div>
       <label>Mot de passe:</label>
-      <input type="password" [formControl]="user.password" required />
+      <input type="password" [formControl]="password" required />
     </div>
     <div>
       <label>Rue:</label>
-      <input type="text" [formControl]="user.street" required />
+      <input type="text" [formControl]="street" required />
     </div>
     <div>
       <label>Code postal:</label>
-      <input type="text" [formControl]="user.zipCode" required />
+      <input type="text" [formControl]="zipCode" required />
     </div>
     <div>
       <label>Ville:</label>
-      <input type="text" [formControl]="user.city" required />
+      <input type="text" [formControl]="city" required />
     </div>
     <button type="reset">Reset</button>
-    <button type='button' (click)="turnToSubmitted()">Inscription</button><!--type="submit"--> 
+    <button type='button' (click)="newUser()">Inscription</button><!--type="submit"--> 
   </form>
-  <div *ngIf="isSubmitted">
+  <div *ngFor="let user of users">
     <p>{{ user.username.value }}</p>
     <p>{{ user.email.value }}</p>
     <p>{{ user.password.value }}</p>
